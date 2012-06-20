@@ -148,14 +148,14 @@ while len(keys) > 0:
     # Have we seen this comment before?
     if (author is not None and author.name not in authors and
         comment.id not in checked_comment_ids):
-      #checked_comment_ids.add(comment.id)
+      checked_comment_ids.add(comment.id)
       # Ensure keyword is present if required
       if args.keyword and args.keyword not in comment.body:
         continue
       
       # Check account age
       created_date = datetime.fromtimestamp(int(author.created_utc))
-      #authors.add(author.name)
+      authors.add(author.name)
       if (datetime.now() - min_account_age) < created_date:
         logger.warn("Author {0} is too new.".format(author.name))
         continue
