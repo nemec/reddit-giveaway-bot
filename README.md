@@ -14,7 +14,7 @@ It can either be given a url of an existing Reddit post to crawl and award
   * Limit by account age: eligible accounts can be limited to accounts created
     at least *N* days ago to prevent sockpuppets.
   * Keywords: to prevent chatter from distracting the bot, an optional
-    keyword can be required for the bot for it to 
+    keyword can be required in a comment for it to be eligible.
   * Reply or PM: the bot can either reply to the user with his/her prize,
     or directly PM the user to keep the information private.
   * Multiple sort options: prizes can be assigned either by timestamp
