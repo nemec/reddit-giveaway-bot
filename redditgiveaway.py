@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 import argparse
 import logging
 import random
-import reddit
+import praw as reddit
 import time
 import sys
 
@@ -118,6 +118,7 @@ if args.reddit:
       body += "\n\n" + strings.random_rule.format(wait=args.wait, utc=utc_wait)
     else:  # Alert users that prizes 
       body += "\n\n" + strings.timestamp_rule
+    body += "\n\n" + strings.what_is_this
     sub = r.submit(args.reddit, strings.submission_title, text=body)
     args.submission = sub.permalink
     logger.warning("Submission can be found at " + str(sub.permalink))
@@ -161,12 +162,13 @@ while len(keys) > 0:
         continue
       
       try:
-        message = strings.reply_message.format(prize=keys.pop(0).strip(),
+        message = strings.prize_reply_message.format(prize=keys.pop(0).strip(),
           url=args.submission)
         if args.reply == "inline":
           comment.reply(message)
         else:
           r.compose_message(author.name, strings.reply_title, message)
+          comment.reply(strings.generic_reply_message)
       except AttributeError as err:
         logging.error("Missing value in strings file: {0}".format(err))
         sys.exit(1)
