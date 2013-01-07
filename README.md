@@ -41,7 +41,7 @@ It can either be given a url of an existing Reddit post to crawl and award
 
 ## Setup
 
-This Python program requires the [Reddit API](https://github.com/mellort/reddit_api)
+This Python program requires the [Reddit API](https://github.com/praw-dev/praw)
 to be installed before running.
 
 A keyfile must be created before the bot can be run. This file consists of
