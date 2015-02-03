@@ -1,4 +1,4 @@
-# Reddit Giveaway Bot
+# Giveaway Bot for Reddit
 
 This Reddit bot manages creating custom giveaways for items such as
   product keys (for video games, apps, etc.).
@@ -41,7 +41,7 @@ It can either be given a url of an existing Reddit post to crawl and award
 
 ## Setup
 
-This Python program requires the [Reddit API](https://github.com/praw-dev/praw)
+This Python program requires the [PRAW api library](https://github.com/praw-dev/praw)
 to be installed before running.
 
 A keyfile must be created before the bot can be run. This file consists of
